@@ -63,7 +63,7 @@ body {
   -webkit-transition-duration: 0.4s;
           transition-duration: 0.4s;
 }
-@media (max-width: 23.125em) {
+@media (max-width: 26.25em) {
   .button {
     width: 100%;
     -webkit-box-pack: center;
