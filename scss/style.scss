@@ -1,0 +1,487 @@
+// Обнулення стилів
+@import url("reset.css");
+
+// Шрифти
+@import url("https://fonts.googleapis.com/css?family=Outfit:300,regular,500,600&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Playfair+Display:regular,500,italic,500italic&display=swap");
+
+@import url("variables.css");
+@import url("iconsfont.css");
+
+body {
+  background-color: var(--white);
+  font-family: "Outfit";
+  line-height: 1.5rem;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 300;
+  color: var(--neutral700);
+
+  @media (min-width: 47.98em) {
+    line-height: 2rem;
+    font-size: 1.125rem;
+  }
+
+  opacity: 0;
+  transition: opacity 1.5s;
+  .loaded & {
+    opacity: 1;
+  }
+}
+
+.wrapper {
+  min-height: 100%;
+  overflow: clip; /* clip */
+  display: flex;
+  flex-direction: column;
+}
+.wrapper > main {
+  flex-grow: 1;
+}
+
+// /------------------------------/
+
+[class*="__container"] {
+  padding-inline: 0.9375rem;
+  max-width: 77.5rem;
+  margin: 0 auto;
+}
+
+/* ------- компоненти -------- */
+
+@import "_components.scss";
+@import "_header.scss";
+@import "_footer.scss";
+
+/* --------------------- */
+
+.hero {
+  padding-top: 5rem;
+
+  &__image {
+    position: relative;
+  }
+
+  &__img {
+    max-width: 100vw;
+  }
+}
+.heading {
+  margin-bottom: 5rem;
+
+  &__container {
+  }
+
+  &__title {
+    color: var(--neutral-900);
+    font-family: "Playfair Display";
+    font-size: 3rem;
+    font-style: italic;
+    font-weight: 500;
+    line-height: 3.75rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+
+    @media (min-width: 47.98em) {
+      font-size: 4.5rem;
+      line-height: 6rem;
+      letter-spacing: -0.1125rem;
+    }
+  }
+
+  &__text {
+    max-width: 50rem;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 1.125rem;
+
+    @media (min-width: 47.98em) {
+      font-size: 1.25rem;
+    }
+  }
+}
+.awards {
+  background-color: var(--neutral-900);
+
+  &__container {
+    padding-block: 1.5rem;
+    display: flex;
+    gap: 1.25rem;
+    justify-content: center;
+    align-items: center;
+
+    @media (max-width: 41.875em) {
+      flex-direction: column;
+    }
+  }
+  &__title {
+    font-family: "Playfair Display";
+    font-size: 1.5rem;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 2rem;
+
+    @media (min-width: 41.875em) {
+      rotate: -90deg;
+    }
+  }
+
+  &__items {
+    position: relative;
+    display: grid;
+    gap: 1.5rem;
+    grid-template-rows: repeat(4, 1fr);
+
+    @media (min-width: 41.875em) and (max-width: 75em) {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      gap: 2rem;
+    }
+
+    @media (min-width: 75em) {
+      gap: 4rem;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: 1fr;
+    }
+  }
+
+  &__item {
+  }
+
+  &__img {
+  }
+}
+
+/* --------------------- */
+
+.about {
+  padding-bottom: 48px;
+
+  &__container {
+    border-bottom: 0.0625rem solid var(--neutral-300);
+  }
+
+  &__info {
+    display: flex;
+    padding-block: 3rem;
+    flex-direction: column;
+    gap: 5rem;
+
+    @media (min-width: 47.98em) and (max-width: 61.99875em) {
+      padding-block: 6rem;
+      gap: 7rem;
+    }
+
+    @media (min-width: 61.99875em) {
+      padding-block: 8rem;
+      gap: 2rem;
+      flex-direction: row;
+    }
+  }
+
+  &__heading-section--about {
+    @media (min-width: 61.99875em) {
+      flex-basis: 37rem;
+    }
+  }
+
+  &__content {
+    position: relative;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+  }
+
+  &__image {
+  }
+
+  &__img {
+    max-width: 100%;
+  }
+}
+
+.section-heading {
+  &__label {
+    margin-bottom: 1.5rem;
+  }
+
+  &__title {
+    margin-bottom: 1.5rem;
+  }
+
+  &__text:not(:last-child) {
+    margin-bottom: 1.5rem;
+  }
+}
+
+.metric {
+  &__items {
+    margin-bottom: 3rem;
+    display: flex;
+    gap: 2rem;
+    justify-content: space-between;
+
+    @media (min-width: 47.98em) {
+      margin-bottom: 5rem;
+    }
+
+    @media (max-width: 47.98em) {
+      flex-direction: column;
+    }
+  }
+
+  &__item {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+
+    @media (min-width: 47.98em) {
+      flex-basis: 24rem;
+    }
+
+    @media (min-width: 47.98em) and (max-width: 61.99875em) {
+      gap: 0.5rem;
+      flex-direction: column;
+      align-items: start;
+    }
+
+    opacity: 0;
+    transition: all 0.1s;
+    transform: scale(0);
+  }
+
+  &__data {
+    font-variant-numeric: lining-nums proportional-nums;
+    color: var(--neutral-900);
+    font-family: "Playfair Display";
+    font-size: 3rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 3.75rem; /* 125% */
+
+    @media (min-width: 47.98em) {
+      font-size: 3.75rem;
+      line-height: 4.5rem; /* 120% */
+      letter-spacing: -0.0938rem;
+    }
+  }
+
+  &__name {
+    color: var(--neutral-900);
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.25rem; /* 142.857% */
+    letter-spacing: 0.0437rem;
+  }
+}
+
+.--animate .metric__item {
+  opacity: 1;
+  transition: all 0.5s;
+  transform: scale(1);
+}
+
+.--animate .metric__item:nth-child(1) {
+  transition-delay: 0;
+}
+.--animate .metric__item:nth-child(2) {
+  transition-delay: 0.1s;
+}
+.--animate .metric__item:nth-child(3) {
+  transition-delay: 0.2s;
+}
+
+/* --------------------- */
+
+.services {
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+
+    @media (min-width: 47.98em) and (max-width: 61.99875em) {
+      padding-block: 6rem;
+      gap: 5rem;
+    }
+
+    @media (min-width: 61.99875em) {
+      padding-block: 7rem;
+      gap: 5rem;
+    }
+  }
+
+  &__heading-section {
+    max-width: 50rem;
+
+    opacity: 0;
+    transform: translate(0px, 50%);
+    transition: all 0.1s;
+  }
+
+  &__items {
+    display: flex;
+    gap: 2rem;
+
+    @media (max-width: 61.99875em) {
+      flex-direction: column;
+    }
+  }
+
+  &__item {
+    border: 0.0625rem solid var(--primary-100);
+    padding: 2rem;
+
+    opacity: 0;
+    transition: all 0.1s;
+    transform: scale(0);
+
+    @media (min-width: 47.98em) {
+      padding: 2.5rem;
+    }
+  }
+
+  &__icon {
+    margin-bottom: 1.5rem;
+
+    @media (min-width: 47.98em) {
+      margin-bottom: 5rem;
+    }
+  }
+
+  &__img {
+  }
+
+  &__info {
+  }
+}
+.section-heading {
+  &__label {
+  }
+
+  &__title {
+  }
+}
+.info {
+  &__title {
+    color: var(--neutral-900);
+    font-variant-numeric: lining-nums proportional-nums;
+    font-family: "Playfair Display";
+    font-size: 1.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 2.5rem; /* 133.333% */
+    margin-bottom: 1rem;
+
+    @media (min-width: 47.98em) {
+      font-size: 2.25rem;
+    }
+  }
+
+  &__text {
+    color: var(--neutral700);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 32px; /* 177.778% */
+  }
+}
+
+.--animate .services__heading-section {
+  transition: all 0.5s;
+  opacity: 1;
+  transform: translate(0px, 0);
+}
+
+.--animate .services__item {
+  opacity: 1;
+  transition: all 0.5s;
+  transform: scale(1);
+}
+
+.--animate .services__item:nth-child(1) {
+  transition-delay: 0;
+}
+.--animate .services__item:nth-child(2) {
+  transition-delay: 0.1s;
+}
+.--animate .services__item:nth-child(3) {
+  transition-delay: 0.2s;
+}
+
+/* --------------------- */
+
+.recent {
+  &__container {
+    padding-block: 3rem;
+    display: flex;
+    gap: 2rem;
+
+    @media (min-width: 47.98em) and (max-width: 61.99875em) {
+      padding-block: 6rem;
+      gap: 5rem;
+    }
+
+    @media (min-width: 61.99875em) {
+      padding-block: 7rem;
+      gap: 5rem;
+    }
+
+    @media (max-width: 61.99875em) {
+      flex-direction: column;
+    }
+  }
+
+  &__heading {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+
+    @media (min-width: 61.99875em) {
+      gap: 6rem;
+    }
+  }
+
+  &__cards {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+
+    @media (min-width: 47.98em) {
+      gap: 5rem;
+    }
+  }
+}
+
+.card {
+  &__image {
+    margin-bottom: 1.5rem;
+  }
+
+  &__img {
+    width: 100%;
+  }
+
+  &__description {
+  }
+
+  &__name {
+    color: var(--neutral-900);
+    font-variant-numeric: lining-nums proportional-nums;
+    font-family: "Playfair Display";
+    font-size: 1.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 2.5rem; /* 133.333% */
+    margin-bottom: 1rem;
+
+    @media (min-width: 47.98em) {
+      font-size: 2.25rem;
+    }
+  }
+
+  &__text {
+  }
+}
+.button {
+}

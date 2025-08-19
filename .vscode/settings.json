@@ -1,0 +1,18 @@
+{
+  "[scss]": {
+    "editor.defaultFormatter": "sibiraj-s.vscode-scss-formatter"
+  },
+  "liveSassCompile.settings.autoprefix": ["> 1%", "last 3 versions"],
+  "liveSassCompile.settings.formats": [
+    {
+      "format": "expanded",
+      "extensionName": ".css",
+      "savePath": "/css",
+      "savePathReplacementPairs": null
+    }
+  ],
+  "liveSassCompile.settings.watchOnLaunch": true,
+  "liveSassCompile.settings.generateMap": false,
+  "liveSassCompile.settings.showAnnouncements": false,
+  "liveSassCompile.settings.showOutputWindowOn": "Error"
+}
